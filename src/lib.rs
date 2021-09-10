@@ -1,7 +1,12 @@
 #[cfg(test)]
 mod tests {
+
+    pub mod App;
+
     #[test]
     fn it_works() {
-        assert_eq!(2 + 2, 4);
+        let app = App::new();
     }
 }
+
+pub mod app;
