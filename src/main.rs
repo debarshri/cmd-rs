@@ -1,13 +1,12 @@
-use std::env;
-
 fn main() {
-
-    let args: Vec<String> = env::args().collect();
-    println!("{:?}", args);
-
     let app = cmd_rs::app::new();
 
-    app.
-    add(&args[1]).
-    execute();
+    app.name("test")
+        .add_paramater(cmd_rs::app::new_parameter("chart", "c", "descr", list))
+        .add_paramater(cmd_rs::app::new_parameter("chart2", "a", "descr", list))
+        .parse();
+}
+
+fn list(x: &str) {
+    println!("parameter {}", x);
 }
